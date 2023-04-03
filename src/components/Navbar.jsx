@@ -55,7 +55,7 @@ const Logo = styled(Link)`
     transition: all 0.25s;
 
     &:hover {
-      filter: brightness(80%);
+      filter: brightness(75%);
     }
   }
 `;
