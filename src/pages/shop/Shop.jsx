@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { products } from "../../products";
+import Product from "./Product";
 
 function Shop() {
   return (
@@ -8,7 +10,11 @@ function Shop() {
         <h1>Katlego J Dev Shop</h1>
       </ShopTitle>
 
-      <Products></Products>
+      <ProductList>
+        {products.map((product) => (
+          <Product data={product} key={product.id} />
+        ))}
+      </ProductList>
     </ShopContainer>
   );
 }
@@ -20,4 +26,4 @@ const ShopTitle = styled.div`
     font-family: var(--font-family);
   }
 `;
-const Products = styled.div``;
+const ProductList = styled.div``;
