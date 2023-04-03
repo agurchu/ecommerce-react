@@ -1,0 +1,17 @@
+:root {
+  --color-accent: #f01a1a;
+  --color-primary: #cbe9f4;
+  --color-secondary: #339cc1;
+  --color-text-01: #1d272b;
+  --color-text-02: #5f7278;
+}
+
+body {
+  font-family: sans-serif system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Ubuntu", "Open Sans", "Helvetica Neue";
+  background-color: var(--color-primary);
+}
+
+html {
+  font-size: 62.5%;
+}
