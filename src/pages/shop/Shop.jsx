@@ -10,7 +10,7 @@ function Shop() {
         <h1>Katlego J Dev Shop</h1>
       </ShopTitle>
 
-      <ProductList>
+      <ProductList className="container">
         {products.map((product) => (
           <Product data={product} key={product.id} />
         ))}
@@ -20,10 +20,26 @@ function Shop() {
 }
 
 export default Shop;
-const ShopContainer = styled.div``;
+const ShopContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const ShopTitle = styled.div`
+  margin: 100px 0 40px 0;
   h1 {
     font-family: var(--font-family);
+    text-align: center;
   }
 `;
-const ProductList = styled.div``;
+
+const ProductList = styled.div`
+  place-items: center;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+`;

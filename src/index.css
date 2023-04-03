@@ -40,6 +40,10 @@ h3 {
   padding: 0 150px;
 }
 
+.container-margin {
+  margin: 0 150px;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 5%;

@@ -74,7 +74,7 @@ export const products = [
   },
   {
     id: 8,
-    productName: "SamsungHuawei P50 Pocket 512GB Dual Sim",
+    productName: "Huawei P50 Pocket 512GB Dual Sim",
     price: 22319.0,
     link: "https://bash.com/huawei/b",
     productImage: url.product8,
