@@ -15,6 +15,17 @@ const getDefaultCart = () => {
 export default function ShopContextProvider({ children }) {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
+  const getTotalAmount = () => {
+    let totalAmount = 0;
+    for (let item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = products.find((product) => product.id === Number(item));
+        totalAmount += cartItems[item] * itemInfo.price;
+      }
+    }
+    return totalAmount;
+  };
+
   const handleAddToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
   };
@@ -32,6 +43,7 @@ export default function ShopContextProvider({ children }) {
     cartItems,
     handleAddToCart,
     handleRemoveFromCart,
+    getTotalAmount,
   };
 
   return (

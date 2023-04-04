@@ -88,3 +88,31 @@ button {
   border-radius: 50%;
   z-index: 1;
 }
+
+.checkout {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.checkout p {
+  text-align: left;
+  margin-left: 25%;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.checkout button {
+  padding: 1.5rem 2rem;
+  margin: 2rem 1rem;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-01);
+  border: 2px solid var(--color-text-01);
+  font-weight: 600;
+  transition: all 0.25s;
+}
+
+.checkout button:hover {
+  background: var(--color-text-01);
+  color: var(--color-primary);
+}
