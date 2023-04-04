@@ -24,6 +24,7 @@ export default Navbar;
 const HeaderNavbar = styled.nav`
   background: var(--color-text-01);
   width: 100%;
+  position: fixed;
   height: 80px;
   display: flex;
   align-items: center;
