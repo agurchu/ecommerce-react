@@ -38,4 +38,9 @@ const ProductList = styled.div`
   height: auto;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+
+  @media (max-width: 370px) {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
 `;

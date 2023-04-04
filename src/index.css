@@ -31,9 +31,11 @@ html {
 
 h1 {
   font-size: 4.5rem;
+  margin-bottom: 2rem;
 }
 h2 {
   font-size: 3.5rem;
+  margin-bottom: 2rem;
 }
 h3 {
   font-size: 2.5rem;
@@ -115,4 +117,27 @@ button {
 .checkout button:hover {
   background: var(--color-text-01);
   color: var(--color-primary);
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .checkout p {
+    font-size: 1.4rem;
+    margin-left: 0;
+  }
+  .checkout button {
+    padding: 1rem 1.5rem;
+    margin: 2rem 0.5rem;
+  }
 }

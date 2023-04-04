@@ -68,9 +68,16 @@ const Description = styled.div`
   text-align: left;
   overflow: hidden;
 
+  @media (max-width: 370px) {
+    flex-direction: column;
+  }
+
   div {
     width: 70%;
     overflow: hidden;
+    @media (max-width: 370px) {
+      width: 100%;
+    }
   }
   p {
     font-size: 2rem;

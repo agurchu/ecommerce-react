@@ -95,6 +95,10 @@ const Content = styled.div`
     }
   }
 
+  @media (max-width: 370px) {
+    padding: 1rem;
+  }
+
   @media screen and (max-width: 600px) {
     div {
       flex-direction: column;
@@ -123,6 +127,10 @@ const Btns = styled.div`
     font-weight: 600;
     font-size: 1.6rem;
     transition: all 0.25s;
+    @media (max-width: 370px) {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+    }
 
     &:hover {
       background: var(--color-primary);
@@ -149,9 +157,16 @@ const HandleCounter = styled.div`
     color: var(--color-accent);
 
     background: var(--color-trans-01);
+    @media (max-width: 370px) {
+      padding: 0.3rem 1rem;
+    }
   }
   input {
     width: 7rem;
     text-align: center;
+
+    @media (max-width: 370px) {
+      width: 3.5rem;
+    }
   }
 `;
