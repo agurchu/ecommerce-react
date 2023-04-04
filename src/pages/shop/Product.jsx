@@ -20,7 +20,7 @@ function Product(props) {
       </Description>
       <BtnsContainer>
         <AddBtn onClick={() => handleAddToCart(id)}>
-          Add To Cart{" "}
+          Add To Cart
           {cartItemAmount > 0 && (
             <span className="count__cart"> {cartItemAmount}</span>
           )}
@@ -97,6 +97,7 @@ const AddBtn = styled.a`
   padding: 15px;
   width: 100%;
   white-space: nowrap;
+
   transition: 0.25s;
 
   &:hover {

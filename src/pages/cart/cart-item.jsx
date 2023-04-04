@@ -6,7 +6,8 @@ import { ShopContext } from "../../context/shop-context";
 export default function CartItem(props) {
   const { id, productImage, productName, price, link } = props.data;
 
-  const { handleRemoveFromCart, cartItems } = useContext(ShopContext);
+  const { handleRemoveFromCart, cartItems, handleAddToCart, updateItemCount } =
+    useContext(ShopContext);
 
   return (
     <Container>
@@ -15,13 +16,19 @@ export default function CartItem(props) {
       </div>
 
       <Content>
-        <Num>{cartItems[id]}</Num>
         <div>
           <h3 className="item__title">{productName}</h3>
           <span>R{price}</span>
         </div>
         <Btns>
-          <button onClick={() => handleRemoveFromCart(id)}>Remove</button>
+          <HandleCounter>
+            <button onClick={() => handleRemoveFromCart(id)}>-</button>
+            <input
+              onChange={(e) => updateItemCount(Number(e.target.value), id)}
+              value={cartItems[id]}
+            />
+            <button onClick={() => handleAddToCart(id)}>+</button>
+          </HandleCounter>
           <a href={link}>Visit Here</a>
         </Btns>
       </Content>
@@ -62,7 +69,7 @@ const Container = styled.div`
     max-height: 68rem;
     min-height: 55rem;
     div {
-      height: 75%;
+      height: 65%;
       width: 100%;
     }
   }
@@ -78,36 +85,26 @@ const Content = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
-
+    h3 {
+      width: 70%;
+    }
     span {
-      font-size: 2rem;
+      font-size: 3rem;
       font-family: var(--font-family);
       color: var(--color-primary);
     }
   }
-`;
-
-const Num = styled.span`
-  align-items: center;
-  background: var(--color-accent);
-  border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  color: var(--color-primary);
-  display: flex;
-  font-size: 1.6rem;
-  font-weight: 600;
-  height: 30px;
-  justify-content: center;
-  left: -15px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
 
   @media screen and (max-width: 600px) {
-    left: 50%;
-    top: -15px;
-    transform: translateX(-50%);
+    div {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h3 {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 
@@ -115,15 +112,11 @@ const Btns = styled.div`
   display: flex;
   position: relative;
 
-  button {
-    left: 0;
-    bottom: 0;
-    color: var(--color-accent);
-    border: 2px solid var(--color-trans-01);
-    background: var(--color-trans-01);
-  }
-  button,
   a {
+    right: 0;
+    bottom: 0;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
     padding: 1.5rem 3rem;
     border-radius: 8px;
     position: absolute;
@@ -133,17 +126,32 @@ const Btns = styled.div`
 
     &:hover {
       background: var(--color-primary);
-    }
-  }
-
-  a {
-    right: 0;
-    bottom: 0;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-
-    &:hover {
       color: var(--color-secondary);
     }
+  }
+`;
+
+const HandleCounter = styled.div`
+  left: 0;
+  bottom: 0;
+  position: absolute !important;
+  height: auto !important;
+  display: flex;
+  flex-direction: row !important;
+  width: auto !important;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 3px solid var(--color-trans-01);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  button {
+    padding: 0.5rem 1.5rem;
+    font-size: 2rem;
+    color: var(--color-accent);
+
+    background: var(--color-trans-01);
+  }
+  input {
+    width: 7rem;
+    text-align: center;
   }
 `;

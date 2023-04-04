@@ -66,9 +66,25 @@ h3 {
 
 .item__title {
   font-family: var(--font-family);
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 button {
   cursor: pointer;
+}
+
+.count__cart {
+  margin-left: 1rem;
+  color: var(--color-accent);
+  background: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -15px;
+  font-size: 1.5rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
 }

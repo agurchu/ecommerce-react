@@ -23,7 +23,16 @@ export default function ShopContextProvider({ children }) {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  const contextValue = { cartItems, handleAddToCart, handleRemoveFromCart };
+  const updateItemCount = (newAmount, itemId) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+  };
+
+  const contextValue = {
+    updateItemCount,
+    cartItems,
+    handleAddToCart,
+    handleRemoveFromCart,
+  };
 
   return (
     <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
