@@ -1,10 +1,12 @@
 :root {
-  --color-accent: #f01a1a;
-  --color-primary: #cbe9f4;
-  --color-secondary: #339cc1;
+  --color-accent: rgb(240, 26, 26);
+  --color-primary: rgb(205, 234, 244);
+  --color-secondary: rgb(51, 156, 193);
   --color-text-01: #1d272b;
   --color-text-02: #5f7278;
-
+  --color-trans-01: rgba(205, 234, 244, 0.4);
+  --color-trans-02: rgba(51, 156, 193, 0.75);
+  --color-trans-03: rgba(240, 26, 26, 0.75);
   --font-family: sans-serif, "Roboto", "Ubuntu", "Open Sans", "Helvetica Neue";
 }
 * {
@@ -20,6 +22,7 @@
 
 body {
   background-color: var(--color-primary);
+  font-family: var(--font-family);
 }
 
 html {
@@ -59,4 +62,13 @@ h3 {
 
 .section__heading {
   font-family: var(--font-family);
+}
+
+.item__title {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+}
+
+button {
+  cursor: pointer;
 }
