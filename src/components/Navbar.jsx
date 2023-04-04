@@ -29,6 +29,7 @@ const HeaderNavbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 10000;
 `;
 
 const NavLinks = styled.ul`

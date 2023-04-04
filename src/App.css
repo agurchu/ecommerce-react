@@ -1,0 +1,14 @@
+.count__cart {
+  margin-left: 1rem;
+  color: var(--color-accent);
+  background: var(--color-primary);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  font-size: 1.5rem;
+  position: absolute;
+  border-radius: 50%;
+}

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ShopContext } from "../../context/shop-context";
 
 function Product(props) {
+  const { handleAddToCart, cartItems } = useContext(ShopContext);
+
   const { id, productName, price, productImage, link } = props.data;
+
+  const cartItemAmount = cartItems[id];
   return (
     <ProductContainer>
       <img src={productImage} alt="" />
@@ -14,7 +19,12 @@ function Product(props) {
         <p>R{price}</p>
       </Description>
       <BtnsContainer>
-        <AddBtn>Add To Cart</AddBtn>
+        <AddBtn onClick={() => handleAddToCart(id)}>
+          Add To Cart{" "}
+          {cartItemAmount > 0 && (
+            <span className="count__cart"> {cartItemAmount}</span>
+          )}
+        </AddBtn>
         <UrlBtn href={link} target="_blank">
           Visit Here
         </UrlBtn>
@@ -83,7 +93,7 @@ const AddBtn = styled.a`
   font-size: 1.6rem;
   font-weight: 600;
   justify-content: center;
-
+  position: relative;
   padding: 15px;
   width: 100%;
   white-space: nowrap;
