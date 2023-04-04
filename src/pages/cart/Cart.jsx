@@ -25,4 +25,12 @@ function Cart() {
 
 export default Cart;
 const CartContainer = styled.div``;
-const CartItems = styled.div``;
+const CartItems = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
+  grid-gap: 2rem;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;

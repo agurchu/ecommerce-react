@@ -56,6 +56,16 @@ const Container = styled.div`
       object-fit: cover;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    max-height: 68rem;
+    min-height: 55rem;
+    div {
+      height: 75%;
+      width: 100%;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -79,10 +89,10 @@ const Content = styled.div`
 
 const Num = styled.span`
   align-items: center;
-  background: var(--color-primary);
+  background: var(--color-accent);
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   display: flex;
   font-size: 1.6rem;
   font-weight: 600;
@@ -93,6 +103,12 @@ const Num = styled.span`
   top: 50%;
   transform: translateY(-50%);
   width: 30px;
+
+  @media screen and (max-width: 600px) {
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+  }
 `;
 
 const Btns = styled.div`
