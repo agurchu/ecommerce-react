@@ -7,7 +7,7 @@ function Shop() {
   return (
     <ShopContainer>
       <ShopTitle>
-        <h1>Katlego J Dev Shop</h1>
+        <h1 className="section__heading">Katlego J Dev Shop</h1>
       </ShopTitle>
 
       <ProductList className="container">
@@ -29,10 +29,6 @@ const ShopContainer = styled.div`
 
 const ShopTitle = styled.div`
   margin: 100px 0 40px 0;
-  h1 {
-    font-family: var(--font-family);
-    text-align: center;
-  }
 `;
 
 const ProductList = styled.div`

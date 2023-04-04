@@ -27,7 +27,7 @@ html {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 h2 {
   font-size: 3.5rem;
@@ -44,8 +44,19 @@ h3 {
   margin: 0 150px;
 }
 
+.container__padding-top {
+  padding-top: 120px;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 5%;
   }
+  .container__padding-top {
+    padding-top: 120px;
+  }
+}
+
+.section__heading {
+  font-family: var(--font-family);
 }
